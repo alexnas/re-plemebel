@@ -1,12 +1,23 @@
 import React from 'react';
 
+import Header from '../header/header';
+import Footer from '../footer/footer';
+import Sidebar from '../sidebar/sidebar';
+
 const MainLayout = ({ children }) => {
+  const layoutStyle = {
+    minHeight: '500px'
+  };
   return (
-    <div className='container'>
-      <div className='row'>
-        <div className='col-md-3'>Sidebar</div>
-        <div className='col-md-9'>{children}</div>
+    <div className='container-fluid'>
+      <Header />
+      <div className='row' style={layoutStyle}>
+        <div className='col-md-2'>
+          <Sidebar />
+        </div>
+        <div className='col-md-10'>{children}</div>
       </div>
+      <Footer />
     </div>
   );
 };
