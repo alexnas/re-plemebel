@@ -75,7 +75,7 @@ export default [
     id: '5',
     categoryId: '1', // Dining Chairs
     brand: '1', //  'Sol 72 Outdoor'
-    name: 'Tryphosa Folding Garden Chairs',
+    name: 'Tryphosa Folding Garden Chair',
     description:
       'Folding garden chair. Product Care: Remove dust, remnants of leaves and cobwebs with a soft brush. Afterwards, wipe the chair with a dampened, soft cloth. Annual treatment with an appropriate protecting agent is recommended to protect the surfaces against moisture and ensure the longevity of the garden furniture.',
     price: '76.99',
