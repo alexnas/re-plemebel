@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import './articles.css';
 import MainLayout from '../mainLayout/mainLayout';
-import { fetchArticles } from '../../actions/actions';
+import { fetchArticles, loadMoreArticles } from '../../actions/actions';
 import { getArticles } from '../../selectors';
 
 class Articles extends Component {
@@ -51,8 +51,7 @@ class Articles extends Component {
   };
 
   render() {
-    const { articles } = this.props;
-    console.log('Articles', articles);
+    const { articles, loadMoreArticles } = this.props;
     return (
       <>
         <MainLayout>
@@ -61,6 +60,16 @@ class Articles extends Component {
             {articles.map((article, index) =>
               this.renderArticle(article, index)
             )}
+          </div>
+          <div className='row'>
+            <div className='col-md-12'>
+              <div
+                onClick={loadMoreArticles}
+                className='btn btn-primary pull-right'
+              >
+                Load More
+              </div>
+            </div>
           </div>
         </MainLayout>
       </>
@@ -75,7 +84,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-  fetchArticles
+  fetchArticles,
+  loadMoreArticles
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Articles);
