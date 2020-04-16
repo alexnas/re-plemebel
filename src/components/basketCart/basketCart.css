@@ -1,0 +1,19 @@
+.cart {
+  margin: 20px auto 10px;
+}
+.cart input {
+  text-align: right;
+}
+.dropdown span {
+  font-size: 16px;
+}
+.dropdown .btn-inverse {
+  background: #50a8e1;
+  border: 1px solid #2d6898;
+}
+.dropdown .btn-inverse:hover {
+  background: rgba(80, 168, 225, 0.9);
+}
+.lead {
+  font-size: 26px;
+}

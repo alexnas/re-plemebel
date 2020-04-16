@@ -2,7 +2,7 @@ import React from 'react';
 
 import Header from '../header/header';
 import Footer from '../footer/footer';
-import Sidebar from '../sidebar/sidebar';
+import Sidebar from '../../components/sidebar/sidebar';
 
 const MainLayout = ({ children }) => {
   const layoutStyle = {

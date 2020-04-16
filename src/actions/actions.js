@@ -7,7 +7,9 @@ import {
   LOAD_MORE_ARTICLES_FAILURE,
   FETCH_ARTICLE_BY_ID_START,
   FETCH_ARTICLE_BY_ID_SUCCESS,
-  FETCH_ARTICLE_BY_ID_FAILURE
+  FETCH_ARTICLE_BY_ID_FAILURE,
+  ADD_ARTICLE_TO_BASKET,
+  SEARCH_ARTICLE
 } from './actionTypes';
 import {
   fetchArticles as fetchArticlesApi,
@@ -75,4 +77,18 @@ export const loadMoreArticles = () => async (dispatch, getState) => {
       error: true
     });
   }
+};
+
+export const addArticleToBasket = id => dispatch => {
+  dispatch({
+    type: ADD_ARTICLE_TO_BASKET,
+    payload: id
+  });
+};
+
+export const searchArticle = text => dispatch => {
+  dispatch({
+    type: SEARCH_ARTICLE,
+    payload: text
+  });
 };

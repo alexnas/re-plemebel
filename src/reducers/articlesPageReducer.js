@@ -1,8 +1,12 @@
-import { FETCH_ARTICLES_SUCCESS } from '../actions/actionTypes';
-import { LOAD_MORE_ARTICLES_SUCCESS } from '../actions/actionTypes';
+import {
+  FETCH_ARTICLES_SUCCESS,
+  LOAD_MORE_ARTICLES_SUCCESS,
+  SEARCH_ARTICLE
+} from '../actions/actionTypes';
 
 const initialState = {
-  ids: []
+  ids: [],
+  search: ''
 };
 
 export default (state = initialState, { type, payload }) => {
@@ -12,11 +16,15 @@ export default (state = initialState, { type, payload }) => {
         ...state,
         ids: [...state.ids, ...payload.map(el => el.id)]
       };
-
     case LOAD_MORE_ARTICLES_SUCCESS:
       return {
         ...state,
         ids: [...state.ids, ...payload.map(el => el.id)]
+      };
+    case SEARCH_ARTICLE:
+      return {
+        ...state,
+        search: payload
       };
     default:
       return state;

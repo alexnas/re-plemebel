@@ -4,7 +4,11 @@ import { Link } from 'react-router-dom';
 
 import './articles.css';
 import MainLayout from '../mainLayout/mainLayout';
-import { fetchArticles, loadMoreArticles } from '../../actions/actions';
+import {
+  fetchArticles,
+  loadMoreArticles,
+  addArticleToBasket
+} from '../../actions/actions';
 import { getArticles } from '../../selectors';
 
 class Articles extends Component {
@@ -14,6 +18,7 @@ class Articles extends Component {
 
   renderArticle = (article, index) => {
     const shortDescription = `${article.description.slice(0, 60)}...`;
+    const { addArticleToBasket } = this.props;
     // TODO: insert real brand name, making state for brand
     return (
       <div
@@ -36,7 +41,12 @@ class Articles extends Component {
               <h5 className='article-price'>${article.price}</h5>
             </div>
             <p className='itemButton'>
-              <button className='btn btn-success'>Buy now!</button>
+              <button
+                onClick={() => addArticleToBasket(article.id)}
+                className='btn btn-success'
+              >
+                Buy now!
+              </button>
               <Link
                 to={`/article/${article.id}`}
                 className='btn btn-outline-secondary'
@@ -85,7 +95,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
   fetchArticles,
-  loadMoreArticles
+  loadMoreArticles,
+  addArticleToBasket
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Articles);

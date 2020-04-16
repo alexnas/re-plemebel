@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
+import './article.css';
 import { fetchArticleById } from '../../actions/actions';
 import { getArticleById } from '../../selectors';
-import './article.css';
+import BasketCart from '../../components/basketCart/basketCart';
+import { addArticleToBasket } from '../../actions/actions';
 
 class Article extends Component {
   componentDidMount() {
@@ -62,7 +65,26 @@ class Article extends Component {
     );
   }
   renderSidebar() {
-    return <div>Sidbar</div>;
+    const { article, addArticleToBasket } = this.props;
+    return (
+      <div>
+        <h3 className='lead'>Quick Shop</h3>
+        <BasketCart />
+        <div className='form-group'>
+          <h4>{article.name}</h4>
+          <h3>${article.price}</h3>
+        </div>
+        <Link to='/' className='btn btn-info btn-block'>
+          Back to store
+        </Link>
+        <button
+          className='btn btn-success btn-block'
+          onClick={() => addArticleToBasket(article.id)}
+        >
+          Add to cart
+        </button>
+      </div>
+    );
   }
 
   render() {
@@ -85,7 +107,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-  fetchArticleById
+  fetchArticleById,
+  addArticleToBasket
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Article);
