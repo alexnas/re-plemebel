@@ -27,7 +27,7 @@ export default (state = initialState, { type, payload }) => {
       articleById[payload.id] = payload;
       return {
         ...state,
-        articleById
+        ...articleById
       };
 
     default:
