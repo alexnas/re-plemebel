@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import './search.css';
 import { searchArticle } from '../../actions/actions';
 
 class Search extends Component {
@@ -29,7 +28,7 @@ class Search extends Component {
   render() {
     return (
       <div className='well blosd'>
-        <h3 className='lead'>Quick shop</h3>
+        <h4 className='lead'>Quick shop</h4>
 
         <form onSubmit={this.handleSubmit}>
           <div className='input-group'>

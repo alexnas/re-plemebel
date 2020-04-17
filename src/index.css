@@ -11,3 +11,97 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.well {
+  background-color: #f3f1f1;
+  margin-top: 10px;
+  padding: 20px 10px 10px 10px;
+  border-radius: 0 0 4px 4px;
+}
+.blosd button {
+  cursor: default;
+}
+.lead {
+  color: #6f6f6f;
+  font-weight: bold;
+  padding-left: 2px;
+}
+.pt20 {
+  padding-top: 20px;
+}
+.cart {
+  margin: 20px auto 10px;
+}
+.cart input {
+  text-align: right;
+}
+.dropdown span {
+  font-size: 16px;
+}
+.dropdown .btn-inverse {
+  background: #50a8e1;
+  border: 1px solid #2d6898;
+}
+.dropdown .btn-inverse:hover {
+  background: rgba(80, 168, 225, 0.9);
+}
+
+.article-list .thumbnail .caption {
+  position: relative;
+  z-index: 40;
+}
+.caption {
+  min-height: 165px;
+}
+
+.article-list .thumbnail img {
+  width: 100%;
+}
+.articles .article-list {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+.itemButton {
+  margin-top: 20px;
+  text-align: center;
+}
+.itemButton .btn-outline-secondary {
+  border: 1px solid #dee2e6;
+}
+.article-price {
+  display: flex;
+  justify-content: flex-end;
+}
+.article-list .thumbnail {
+  padding-bottom: 50px;
+}
+.short-description {
+  font-size: smaller;
+  color: grey;
+}
+
+.details {
+  border-bottom: 1px dashed #e5e5e5;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+
+.details .details-title {
+  font-size: 1em;
+  line-height: 40px;
+  color: #666;
+}
+.details .details-info {
+  line-height: 40px;
+  margin-right: 20px;
+  font-size: 0.8em;
+  color: #777;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
+}
+.thumbnail .caption-full {
+  padding: 9px;
+  margin-top: 10px;
+  color: #333;
+}

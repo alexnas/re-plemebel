@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import './article.css';
+// import './article.css';
 import { fetchArticleById } from '../../actions/actions';
 import { getArticleById } from '../../selectors';
 import BasketCart from '../../components/basketCart/basketCart';
@@ -68,7 +68,7 @@ class Article extends Component {
     const { article, addArticleToBasket } = this.props;
     return (
       <div>
-        <h3 className='lead'>Quick Shop</h3>
+        <h4 className='lead'>Quick Shop</h4>
         <BasketCart />
         <div className='form-group'>
           <h4>{article.name}</h4>
@@ -91,7 +91,7 @@ class Article extends Component {
     const { article } = this.props;
     return (
       <div className='container'>
-        <div className='row'>
+        <div className='row pt20'>
           <div className='col-md-9'>{article && this.renderContent()}</div>
           <div className='col-md-3'>{article && this.renderSidebar()}</div>
         </div>

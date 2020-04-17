@@ -5,6 +5,7 @@ import articlesReducer from './articlesReducer';
 import articlesPageReducer from './articlesPageReducer';
 import articlePageReducer from './articlePageReducer';
 import basketReducer from './basketReducer';
+import cagegoriesReducer from './categoriesReducer';
 
 const createRootReducer = history =>
   combineReducers({
@@ -12,7 +13,8 @@ const createRootReducer = history =>
     articles: articlesReducer,
     articlesPage: articlesPageReducer,
     articlePage: articlePageReducer,
-    basket: basketReducer
+    basket: basketReducer,
+    categories: cagegoriesReducer
   });
 
 export default createRootReducer;
