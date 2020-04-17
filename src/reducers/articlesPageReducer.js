@@ -14,7 +14,7 @@ export default (state = initialState, { type, payload }) => {
     case FETCH_ARTICLES_SUCCESS:
       return {
         ...state,
-        ids: [...state.ids, ...payload.map(el => el.id)]
+        ids: payload.map(el => el.id)
       };
     case LOAD_MORE_ARTICLES_SUCCESS:
       return {
