@@ -105,3 +105,48 @@ code {
   margin-top: 10px;
   color: #333;
 }
+.item-checkout .first-column-checkout {
+  width: 12%;
+}
+.item-checkout td {
+  border-bottom: 1px solid #ddd;
+  border-top: none !important;
+  text-align: center;
+  vertical-align: middle !important;
+}
+.item-checkout .delete-cart {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+.item-checkout .delete-cart {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  color: #e66868;
+}
+.total-user-checkout {
+  margin-right: 20px;
+  margin-top: 15px;
+}
+.table-bordered {
+  border-collapse: separate;
+  border-radius: 4px;
+}
+.delete-cart {
+  display: block;
+  height: 16px;
+  width: 16px;
+}
+.delete-cart:hover {
+  cursor: pointer;
+}
+
+.logo-image {
+  margin: 0 5px 10px 30px;
+  max-height: 70px;
+  width: auto;
+}
+.logo-name {
+  font-size: 42px;
+}

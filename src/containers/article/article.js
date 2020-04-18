@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-// import './article.css';
 import { fetchArticleById } from '../../actions/actions';
 import { getArticleById } from '../../selectors';
 import BasketCart from '../../components/basketCart/basketCart';

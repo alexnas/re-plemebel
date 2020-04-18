@@ -12,7 +12,10 @@ import {
   SEARCH_ARTICLE,
   FETCH_CATEGORIES_START,
   FETCH_CATEGORIES_SUCCESS,
-  FETCH_CATEGORIES_FAILURE
+  FETCH_CATEGORIES_FAILURE,
+  REMOVE_ARTICLE_FROM_BASKET,
+  CLEAN_BASKET,
+  BASKET_CHECKOUT
 } from './actionTypes';
 import {
   fetchArticles as fetchArticlesApi,
@@ -115,4 +118,22 @@ export const fetchCategories = () => async dispatch => {
       error: true
     });
   }
+};
+
+export const removeArticleFromBasket = id => dispatch => {
+  dispatch({
+    type: REMOVE_ARTICLE_FROM_BASKET,
+    payload: id
+  });
+};
+
+export const cleanBasket = () => dispatch => {
+  dispatch({
+    type: CLEAN_BASKET
+  });
+};
+
+export const basketCheckout = articles => dispatch => {
+  alert(JSON.stringify(articles)); // temporary illustrative data output
+  dispatch({ type: BASKET_CHECKOUT, payload: articles });
 };

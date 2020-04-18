@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-// import './articles.css';
 import MainLayout from '../mainLayout/mainLayout';
 import {
   fetchArticles,

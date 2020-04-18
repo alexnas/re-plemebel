@@ -34,3 +34,13 @@ export const getSafe = fn => {
 
 export const getActiveCategoryId = ownProps =>
   getSafe(() => ownProps.match.params.id);
+
+export const getBasketArticlesWithCount = state => {
+  // basketArticleId => count
+  const getCount = id => state.basket.filter(baskId => baskId === id).length;
+
+  return state.basket
+    .filter((id, ind, arr) => arr.indexOf(id) === ind) // -> unique ids
+    .map(id => getArticleById(state, id)) // ids -> articles
+    .map(article => ({ ...article, count: getCount(article.id) })); // -> w/count
+};
