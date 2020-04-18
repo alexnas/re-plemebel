@@ -44,3 +44,5 @@ export const getBasketArticlesWithCount = state => {
     .map(id => getArticleById(state, id)) // ids -> articles
     .map(article => ({ ...article, count: getCount(article.id) })); // -> w/count
 };
+
+export const getBrands = state => Object.values(state.brands);

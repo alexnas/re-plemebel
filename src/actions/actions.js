@@ -15,13 +15,17 @@ import {
   FETCH_CATEGORIES_FAILURE,
   REMOVE_ARTICLE_FROM_BASKET,
   CLEAN_BASKET,
-  BASKET_CHECKOUT
+  BASKET_CHECKOUT,
+  FETCH_BRANDS_START,
+  FETCH_BRANDS_SUCCESS,
+  FETCH_BRANDS_FAILURE
 } from './actionTypes';
 import {
   fetchArticles as fetchArticlesApi,
   loadMorePhones as loadMorePhonesApi,
   fetchArticle as fetchArticleApi,
-  fetchCategories as fetchCategoriesApi
+  fetchCategories as fetchCategoriesApi,
+  fetchBrands as fetchBrandsApi
 } from '../api/articlesMockApi';
 import { getRenderedArticlesLength } from '../selectors';
 
@@ -136,4 +140,24 @@ export const cleanBasket = () => dispatch => {
 export const basketCheckout = articles => dispatch => {
   alert(JSON.stringify(articles)); // temporary illustrative data output
   dispatch({ type: BASKET_CHECKOUT, payload: articles });
+};
+
+export const fetchBrands = () => async dispatch => {
+  dispatch({
+    type: FETCH_BRANDS_START
+  });
+
+  try {
+    const brands = await fetchBrandsApi();
+    dispatch({
+      type: FETCH_BRANDS_SUCCESS,
+      payload: brands
+    });
+  } catch (err) {
+    dispatch({
+      type: FETCH_BRANDS_FAILURE,
+      payload: err,
+      error: true
+    });
+  }
 };

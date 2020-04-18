@@ -7,20 +7,23 @@ import {
   fetchArticles,
   loadMoreArticles,
   addArticleToBasket,
-  fetchCategories
+  fetchCategories,
+  fetchBrands
 } from '../../actions/actions';
-import { getArticles } from '../../selectors';
+import { getArticles, getBrands } from '../../selectors';
 
 class Articles extends Component {
   componentDidMount() {
     this.props.fetchArticles();
     this.props.fetchCategories();
+    this.props.fetchBrands();
   }
 
   renderArticle = (article, index) => {
+    const { brands, addArticleToBasket } = this.props;
     const shortDescription = `${article.description.slice(0, 60)}...`;
-    const { addArticleToBasket } = this.props;
-    // TODO: insert real brand name, making state for brand
+    const brand = brands.filter(brand => brand.id === article.brand)[0];
+
     return (
       <div
         className='col col-12 col-sm-6 col-md-4  col-lg-3 article-list'
@@ -36,7 +39,9 @@ class Articles extends Component {
             <h6>
               <Link to={`/articles/${article.id}`}>{article.name}</Link>
             </h6>
-            <h6 className=''>Brand: {article.brand}</h6>
+            <h6 className='brand'>
+              <span>Brand: </span> {brand && brand.name}
+            </h6>
             <p className='short-description'>{shortDescription}</p>
             <div>
               <h5 className='article-price'>${article.price}</h5>
@@ -90,7 +95,8 @@ class Articles extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    articles: getArticles(state, ownProps)
+    articles: getArticles(state, ownProps),
+    brands: getBrands(state)
   };
 };
 
@@ -98,7 +104,8 @@ const mapDispatchToProps = {
   fetchArticles,
   loadMoreArticles,
   addArticleToBasket,
-  fetchCategories
+  fetchCategories,
+  fetchBrands
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Articles);

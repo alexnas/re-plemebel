@@ -1,5 +1,6 @@
 import articles from './mockArticles';
 import categories from './mockCategories';
+import brands from './mockBrands';
 
 export const fetchArticles = async () => {
   return new Promise((resolve, reject) => {
@@ -23,5 +24,11 @@ export const fetchArticle = async id => {
 export const fetchCategories = async () => {
   return new Promise((resolve, reject) => {
     resolve(categories);
+  });
+};
+
+export const fetchBrands = async () => {
+  return new Promise((resolve, reject) => {
+    resolve(brands);
   });
 };
