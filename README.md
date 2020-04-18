@@ -7,8 +7,8 @@ React eShop of rattan furniture.
 ## Options
 
 - search
-- filtering by type
-- item description card (specification)
+- filtering
+- item specification
 - cart
 - etc
 
@@ -16,9 +16,12 @@ React eShop of rattan furniture.
 
 - React
 - React Router
+- Connected-react-router
 - Redux
 - Redux-Thunk
+- Redux-devtools
 - Bootstrap
+- Classnames
 - etc
 
 ## Installation and usage
