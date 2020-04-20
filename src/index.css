@@ -80,7 +80,6 @@ code {
   font-size: smaller;
   color: grey;
 }
-
 .details {
   border-bottom: 1px dashed #e5e5e5;
   overflow: hidden;
@@ -140,19 +139,4 @@ code {
 }
 .delete-cart:hover {
   cursor: pointer;
-}
-
-.logo-image {
-  margin: 0 5px 10px 30px;
-  max-height: 70px;
-  width: auto;
-}
-.logo-name {
-  font-size: 42px;
-}
-.brand {
-  color: #0e4042;
-}
-.brand span {
-  font-weight: normal;
 }

@@ -1,0 +1,32 @@
+.topbar {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+}
+ul {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+.topbar .nav-item .nav-link {
+  margin-top: 5px;
+}
+.logo-image {
+  margin: 0 5px 10px 30px;
+  max-height: 40px;
+  margin-top: -20px;
+  width: auto;
+}
+.logo-name {
+  font-size: 42px;
+  line-height: 45px;
+  color: #0e4042;
+}
+.brand span {
+  font-weight: normal;
+}
